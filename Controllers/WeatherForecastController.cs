@@ -56,5 +56,15 @@ namespace DotnedataBase.Controllers
             }
 
         }
+        [HttpGet]
+        public List<GetUser> GetUser(){
+            var data = _db.ReportTable.Select(x => new GetUser {
+                Id = x.Id,
+                Name = x.Name,
+                Surname = x.Surname,
+            }).ToList();
+            return data ;
+
+        }
     }
 }
